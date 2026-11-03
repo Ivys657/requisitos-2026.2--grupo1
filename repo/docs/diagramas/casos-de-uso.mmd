@@ -1,0 +1,45 @@
+flowchart LR
+    EST([Estudante])
+    PRO([Professor])
+    COO([Coordenador])
+    ADM([Administrador])
+
+    subgraph SIS[Sistema ENADE Prep]
+        UC01((UC01 Cadastrar-se))
+        UC02((UC02 Autenticar-se))
+        UC09((UC09 Recuperar senha))
+        UC03((UC03 Consultar e filtrar questões))
+        UC04((UC04 Responder questão))
+        UC05((UC05 Realizar simulado cronometrado))
+        UC06((UC06 Ver gabarito comentado))
+        UC07((UC07 Ver estatísticas))
+        UC08((UC08 Participar do fórum))
+        UC10((UC10 Gerenciar questões))
+        UC11((UC11 Comentar questão))
+        UC12((UC12 Acompanhar desempenho agregado))
+        UC13((UC13 Moderar fórum))
+        UC14((UC14 Gerenciar usuários))
+    end
+
+    EST --- UC01
+    EST --- UC02
+    EST --- UC03
+    EST --- UC04
+    EST --- UC05
+    EST --- UC06
+    EST --- UC07
+    EST --- UC08
+    PRO --- UC02
+    PRO --- UC11
+    PRO --- UC08
+    COO --- UC02
+    COO --- UC12
+    ADM --- UC02
+    ADM --- UC10
+    ADM --- UC13
+    ADM --- UC14
+
+    UC02 -. "«extend»" .-> UC09
+    UC04 -. "«include»" .-> UC06
+    UC05 -. "«include»" .-> UC06
+    UC03 -. "«include»" .-> UC02
