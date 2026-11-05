@@ -1,0 +1,57 @@
+flowchart TB
+    subgraph CLI[Camada de Apresentação]
+        WEB[Aplicação Web Responsiva]
+        MOB[Interface Mobile / PWA]
+    end
+
+    GW[API Gateway / Back-end API REST]
+
+    subgraph APP[Camada de Aplicação - Módulos]
+        AUTH[Módulo de Autenticação e Perfis]
+        QST[Módulo de Questões]
+        SIM[Módulo de Simulados]
+        GAB[Módulo de Gabarito Comentado]
+        EST[Módulo de Estatísticas]
+        FOR[Módulo de Fórum e Moderação]
+        ADM[Módulo de Administração]
+        NOT[Serviço de Notificações]
+    end
+
+    subgraph DAD[Camada de Dados]
+        DB[(Banco de Dados Relacional)]
+        CCH[(Cache)]
+        FS[(Armazenamento de Arquivos)]
+    end
+
+    subgraph EXT[Serviços Externos]
+        MAIL[Serviço de E-mail]
+        INEP[Portal INEP - provas oficiais]
+    end
+
+    WEB -->|HTTPS/JSON| GW
+    MOB -->|HTTPS/JSON| GW
+    GW --> AUTH
+    GW --> QST
+    GW --> SIM
+    GW --> GAB
+    GW --> EST
+    GW --> FOR
+    GW --> ADM
+    SIM --> QST
+    SIM --> EST
+    GAB --> QST
+    FOR --> QST
+    FOR --> NOT
+    ADM --> QST
+    AUTH --> DB
+    QST --> DB
+    SIM --> DB
+    SIM --> CCH
+    GAB --> DB
+    EST --> DB
+    FOR --> DB
+    ADM --> DB
+    QST --> FS
+    NOT --> MAIL
+    AUTH --> MAIL
+    ADM -.->|importação manual de provas| INEP

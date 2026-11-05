@@ -1,0 +1,72 @@
+
+@startuml
+top to bottom direction
+skinparam componentStyle uml2
+skinparam shadowing false
+
+title Sistema de Apoio ao ENADE - Diagrama de Componentes
+
+package "Camada de Apresentação" {
+    component "Aplicação Web Responsiva" as WEB
+    component "Interface Mobile / PWA" as MOB
+}
+
+package "Camada de API" {
+    component "API Gateway / REST" as API
+}
+
+package "Camada de Aplicação" {
+    component "Autenticação e Perfis" as AUTH
+    component "Gerenciamento de Questões" as QST
+    component "Simulados" as SIM
+    component "Gabarito Comentado" as GAB
+    component "Estatísticas" as EST
+    component "Fórum e Moderação" as FOR
+    component "Administração" as ADM
+    component "Notificações" as NOT
+}
+
+package "Camada de Dados" {
+    database "Banco de Dados Relacional" as DB
+    component "Cache" as CACHE
+    component "Armazenamento de Arquivos" as FS
+}
+
+package "Serviços Externos" {
+    component "Serviço de E-mail" as MAIL
+    component "Portal INEP" as INEP
+}
+
+WEB --> API : HTTPS / JSON
+MOB --> API : HTTPS / JSON
+
+API --> AUTH
+API --> QST
+API --> SIM
+API --> GAB
+API --> EST
+API --> FOR
+API --> ADM
+
+SIM --> QST
+SIM --> EST
+GAB --> QST
+FOR --> QST
+FOR --> NOT
+ADM --> QST
+
+AUTH --> DB
+QST --> DB
+SIM --> DB
+SIM --> CACHE
+GAB --> DB
+EST --> DB
+FOR --> DB
+ADM --> DB
+
+QST --> FS
+AUTH --> MAIL
+NOT --> MAIL
+ADM ..> INEP : Importação manual de provas
+
+@enduml

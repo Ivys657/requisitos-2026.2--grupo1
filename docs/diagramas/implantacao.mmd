@@ -1,0 +1,29 @@
+flowchart TB
+    subgraph CD[Dispositivo do Usuário]
+        BR[Navegador Web / Mobile<br/>«execution environment»]
+    end
+
+    subgraph CLOUD[Infraestrutura em Nuvem]
+        LB[Load Balancer + TLS<br/>«node»]
+        subgraph APPN[Servidor de Aplicação - Containers]
+            FE[Front-end estático<br/>«artifact»]
+            API[API Back-end<br/>«artifact»]
+        end
+        subgraph DBN[Servidor de Banco de Dados]
+            PG[(Banco Relacional<br/>«artifact»)]
+        end
+        CA[(Servidor de Cache<br/>«node»)]
+        ST[Armazenamento de Objetos<br/>«node»]
+        BK[Backup diário<br/>«node»]
+    end
+
+    SMTP[Servidor de E-mail<br/>«external»]
+
+    BR -->|HTTPS 443| LB
+    LB --> FE
+    LB --> API
+    API -->|TCP| PG
+    API -->|TCP| CA
+    API -->|HTTPS| ST
+    API -->|SMTP/API| SMTP
+    PG --> BK

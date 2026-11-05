@@ -1,0 +1,51 @@
+
+@startuml
+top to bottom direction
+skinparam shadowing false
+
+title Sistema de Apoio ao ENADE - Diagrama de Implantação
+
+node "Dispositivo do Usuário" as DEVICE <<device>> {
+    node "Navegador Web / Mobile" as BROWSER <<executionEnvironment>>
+}
+
+cloud "Infraestrutura em Nuvem" as CLOUD {
+
+    node "Load Balancer + TLS" as LB
+
+    node "Servidor de Aplicação" as APP {
+        artifact "Front-end Estático" as FE
+        artifact "API Back-end" as API
+    }
+
+    node "Servidor de Banco de Dados" as DBNODE {
+        database "Banco Relacional" as DB
+    }
+
+    node "Servidor de Cache" as CACHE
+
+    node "Armazenamento de Objetos" as STORAGE
+
+    node "Serviço de Backup" as BACKUP
+}
+
+node "Servidor Externo de E-mail" as MAIL
+
+BROWSER --> LB : HTTPS / 443
+
+LB --> FE : HTTPS
+LB --> API : HTTPS
+
+API --> DB : TCP
+API --> CACHE : TCP
+API --> STORAGE : HTTPS
+API --> MAIL : SMTP / API
+
+DB --> BACKUP : Backup diário
+
+note bottom of CLOUD
+  Arquitetura proposta.
+  Tecnologias ainda não implementadas.
+end note
+
+@enduml
