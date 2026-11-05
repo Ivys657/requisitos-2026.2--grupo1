@@ -31,52 +31,7 @@
 | UC14 | Gerenciar usuários | Administrador | RF23 |
 
 ![Diagrama UML de Casos de Uso](diagramas/casos-de-uso.svg)
-flowchart LR
-    EST([Estudante])
-    PRO([Professor])
-    COO([Coordenador])
-    ADM([Administrador])
 
-    subgraph SIS[Sistema ENADE Prep]
-        UC01((UC01 Cadastrar-se))
-        UC02((UC02 Autenticar-se))
-        UC09((UC09 Recuperar senha))
-        UC03((UC03 Consultar e filtrar questões))
-        UC04((UC04 Responder questão))
-        UC05((UC05 Realizar simulado cronometrado))
-        UC06((UC06 Ver gabarito comentado))
-        UC07((UC07 Ver estatísticas))
-        UC08((UC08 Participar do fórum))
-        UC10((UC10 Gerenciar questões))
-        UC11((UC11 Comentar questão))
-        UC12((UC12 Acompanhar desempenho agregado))
-        UC13((UC13 Moderar fórum))
-        UC14((UC14 Gerenciar usuários))
-    end
-
-    EST --- UC01
-    EST --- UC02
-    EST --- UC03
-    EST --- UC04
-    EST --- UC05
-    EST --- UC06
-    EST --- UC07
-    EST --- UC08
-    PRO --- UC02
-    PRO --- UC11
-    PRO --- UC08
-    COO --- UC02
-    COO --- UC12
-    ADM --- UC02
-    ADM --- UC10
-    ADM --- UC13
-    ADM --- UC14
-
-    UC02 -. "«extend»" .-> UC09
-    UC04 -. "«include»" .-> UC06
-    UC05 -. "«include»" .-> UC06
-    UC03 -. "«include»" .-> UC02
-```
 
 ### Especificação resumida — UC05 Realizar simulado cronometrado
 | Campo | Descrição |
@@ -91,64 +46,7 @@ flowchart LR
 ## 7.2 Diagrama de Componentes
 
 ![Diagrama UML de Componentes](diagramas/componentes.svg)
-flowchart TB
-    subgraph CLI[Camada de Apresentação]
-        WEB[Aplicação Web Responsiva]
-        MOB[Interface Mobile / PWA]
-    end
 
-    GW[API Gateway / Back-end API REST]
-
-    subgraph APP[Camada de Aplicação - Módulos]
-        AUTH[Módulo de Autenticação e Perfis]
-        QST[Módulo de Questões]
-        SIM[Módulo de Simulados]
-        GAB[Módulo de Gabarito Comentado]
-        EST[Módulo de Estatísticas]
-        FOR[Módulo de Fórum e Moderação]
-        ADM[Módulo de Administração]
-        NOT[Serviço de Notificações]
-    end
-
-    subgraph DAD[Camada de Dados]
-        DB[(Banco de Dados Relacional)]
-        CCH[(Cache)]
-        FS[(Armazenamento de Arquivos)]
-    end
-
-    subgraph EXT[Serviços Externos]
-        MAIL[Serviço de E-mail]
-        INEP[Portal INEP - provas oficiais]
-    end
-
-    WEB -->|HTTPS/JSON| GW
-    MOB -->|HTTPS/JSON| GW
-    GW --> AUTH
-    GW --> QST
-    GW --> SIM
-    GW --> GAB
-    GW --> EST
-    GW --> FOR
-    GW --> ADM
-    SIM --> QST
-    SIM --> EST
-    GAB --> QST
-    FOR --> QST
-    FOR --> NOT
-    ADM --> QST
-    AUTH --> DB
-    QST --> DB
-    SIM --> DB
-    SIM --> CCH
-    GAB --> DB
-    EST --> DB
-    FOR --> DB
-    ADM --> DB
-    QST --> FS
-    NOT --> MAIL
-    AUTH --> MAIL
-    ADM -.->|importação manual de provas| INEP
-```
 
 | Componente | Responsabilidade | Requisitos |
 |-----------|------------------|-----------|
@@ -164,36 +62,7 @@ flowchart TB
 ## 7.3 Diagrama de Implantação
 
 ![Diagrama UML de Implantação](diagramas/implantacao.svg)
-flowchart TB
-    subgraph CD[Dispositivo do Usuário]
-        BR[Navegador Web / Mobile<br/>«execution environment»]
-    end
 
-    subgraph CLOUD[Infraestrutura em Nuvem]
-        LB[Load Balancer + TLS<br/>«node»]
-        subgraph APPN[Servidor de Aplicação - Containers]
-            FE[Front-end estático<br/>«artifact»]
-            API[API Back-end<br/>«artifact»]
-        end
-        subgraph DBN[Servidor de Banco de Dados]
-            PG[(Banco Relacional<br/>«artifact»)]
-        end
-        CA[(Servidor de Cache<br/>«node»)]
-        ST[Armazenamento de Objetos<br/>«node»]
-        BK[Backup diário<br/>«node»]
-    end
-
-    SMTP[Servidor de E-mail<br/>«external»]
-
-    BR -->|HTTPS 443| LB
-    LB --> FE
-    LB --> API
-    API -->|TCP| PG
-    API -->|TCP| CA
-    API -->|HTTPS| ST
-    API -->|SMTP/API| SMTP
-    PG --> BK
-```
 
 | Nó | Tecnologia sugerida (referência) | Observação |
 |----|----------------------------------|-----------|
