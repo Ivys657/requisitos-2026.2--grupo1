@@ -1,6 +1,6 @@
 # 7. Modelagem UML
 
-> Os diagramas abaixo usam **Mermaid** e renderizam automaticamente no GitHub. Os arquivos-fonte ficam em `docs/diagramas/`. Para o PDF ou apresentação, podem ser redesenhados no Draw.io, Lucidchart ou Astah seguindo a mesma estrutura.
+> Os diagramas UML foram desenvolvidos utilizando PlantUML e estão disponíveis em formato SVG para visualização direta no GitHub. Os arquivos-fonte .puml estão disponíveis em docs/diagramas/ para edição e versionamento.
 
 ## 7.1 Diagrama de Casos de Uso
 
@@ -30,7 +30,7 @@
 | UC13 | Moderar fórum | Administrador | RF21 |
 | UC14 | Gerenciar usuários | Administrador | RF23 |
 
-```mermaid
+![Diagrama UML de Casos de Uso](diagramas/casos-de-uso.svg)
 flowchart LR
     EST([Estudante])
     PRO([Professor])
@@ -90,7 +90,7 @@ flowchart LR
 
 ## 7.2 Diagrama de Componentes
 
-```mermaid
+![Diagrama UML de Componentes](diagramas/componentes.svg)
 flowchart TB
     subgraph CLI[Camada de Apresentação]
         WEB[Aplicação Web Responsiva]
@@ -163,7 +163,7 @@ flowchart TB
 
 ## 7.3 Diagrama de Implantação
 
-```mermaid
+![Diagrama UML de Implantação](diagramas/implantacao.svg)
 flowchart TB
     subgraph CD[Dispositivo do Usuário]
         BR[Navegador Web / Mobile<br/>«execution environment»]

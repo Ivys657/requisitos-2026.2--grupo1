@@ -1,0 +1,56 @@
+
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+skinparam shadowing false
+
+title Sistema de Apoio ao ENADE - Casos de Uso
+
+actor "Estudante" as EST
+actor "Professor" as PRO
+actor "Coordenador" as COO
+actor "Administrador" as ADM
+
+rectangle "Sistema de Apoio ao ENADE" {
+    usecase "UC01\nCadastrar-se" as UC01
+    usecase "UC02\nAutenticar-se" as UC02
+    usecase "UC03\nConsultar e filtrar questões" as UC03
+    usecase "UC04\nResponder questão" as UC04
+    usecase "UC05\nRealizar simulado cronometrado" as UC05
+    usecase "UC06\nVer gabarito comentado" as UC06
+    usecase "UC07\nVer estatísticas de desempenho" as UC07
+    usecase "UC08\nParticipar do fórum" as UC08
+    usecase "UC09\nRecuperar senha" as UC09
+    usecase "UC10\nGerenciar questões" as UC10
+    usecase "UC11\nComentar questão" as UC11
+    usecase "UC12\nAcompanhar desempenho agregado" as UC12
+    usecase "UC13\nModerar fórum" as UC13
+    usecase "UC14\nGerenciar usuários" as UC14
+}
+
+EST -- UC01
+EST -- UC02
+EST -- UC03
+EST -- UC04
+EST -- UC05
+EST -- UC06
+EST -- UC07
+EST -- UC08
+EST -- UC09
+
+PRO -- UC02
+PRO -- UC08
+PRO -- UC09
+PRO -- UC11
+
+COO -- UC02
+COO -- UC09
+COO -- UC12
+
+ADM -- UC02
+ADM -- UC09
+ADM -- UC10
+ADM -- UC13
+ADM -- UC14
+
+@enduml
