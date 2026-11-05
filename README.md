@@ -49,9 +49,35 @@ A primeira sprint contempla a elicitação de requisitos, a definição das func
 
 As atividades são organizadas por meio das Issues e Milestones do GitHub, permitindo o acompanhamento das entregas e o versionamento dos artefatos.
 
+### Rastreabilidade da Sprint 1
+
+| Entregável | Issues |
+|------------|--------|
+| Documento de Visão | #1 |
+| Identificação de Stakeholders | #2 |
+| Roteiro e resultados de entrevistas | #3, #4 |
+| Requisitos funcionais e não funcionais | #5, #6 |
+| Regras de negócio | #7 |
+| Backlog priorizado | #8 |
+| Diagramas UML | #9, #10, #11 |
+
+### Convenções
+
+- RF: Requisito Funcional
+- RNF: Requisito Não Funcional
+- RN: Regra de Negócio
+- UC: Caso de Uso
+- US: História de Usuário
+- Priorização: MoSCoW
+- Diagramas UML: PlantUML (.puml), exportados em SVG
+
+
 ## Integrantes
 
-Grupo 1 — Cristian Henrique / João Ivys.
+## Integrantes
+
+- Cristian Henrique
+- João Ivys
 
 ## Referências
 
