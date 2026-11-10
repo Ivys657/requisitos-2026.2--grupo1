@@ -38,3 +38,25 @@
 
 ## Distribuição
 Must: 12 itens (54 pts) · Should: 6 itens (25 pts) · Could: 3 itens (10 pts) · Won't: 2 itens.
+
+## Análise exploratória das prioridades
+
+A simulação com o perfil de professor da área de TI sugere três frentes prioritárias para o Sistema de Apoio ao ENADE:
+
+**1. Banco de questões**
+
+Centralizar provas e questões do ENADE, permitindo consultas por curso, ano e componente.
+
+**2. Simulados**
+
+Permitir que os estudantes realizem simulados e consultem resultados detalhados para identificar dificuldades.
+
+**3. Acompanhamento do desempenho**
+
+Disponibilizar estatísticas individuais e informações agregadas que apoiem o acompanhamento pedagógico.
+
+Essas funcionalidades são candidatas à prioridade Must no método MoSCoW, sujeitas à validação com stakeholders e à revisão das prioridades existentes.
+
+Funcionalidades complementares, como fórum e notificações, podem ser consideradas para etapas posteriores, de acordo com o escopo aprovado pelo grupo.
+
+Esta análise se baseia em uma simulação exploratória e não representa uma priorização validada por um entrevistado real.

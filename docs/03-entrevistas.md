@@ -77,6 +77,78 @@
 | _ex.: dificuldade de encontrar questões do próprio curso_ | P1, P3 | 2/5 | RF02 |
 | | | | |
 
+### 3.6.1 Entrevista simulada — Professor da área de TI
+
+**Tipo:** Simulação de elicitação de requisitos  
+**Perfil representado:** Professor universitário da área de Tecnologia da Informação, responsável por acompanhar a preparação dos estudantes para o ENADE.  
+**Técnica:** Entrevista semiestruturada simulada com auxílio de inteligência artificial.  
+**Objetivo:** Explorar possíveis dificuldades dos professores e identificar necessidades para o Sistema de Apoio ao ENADE.
+
+**Observação:** Esta atividade é uma simulação acadêmica. As respostas não foram coletadas de um professor real e precisam de validação posterior com stakeholders.
+
+#### Resumo das respostas simuladas
+
+**1. Dificuldades dos estudantes**
+
+O cenário simulado destaca a falta de organização dos estudos, a dificuldade para encontrar materiais específicos e a preparação tardia para o ENADE.
+
+**2. Preparação realizada atualmente**
+
+O cenário considera o uso de revisões de conteúdo, provas anteriores e atividades preparatórias disponibilizadas em diferentes ambientes.
+
+**3. Dificuldades dos professores**
+
+A principal dificuldade simulada é acompanhar individualmente a evolução dos estudantes e identificar os assuntos nos quais apresentam mais erros.
+
+**4. Identificação de dificuldades de aprendizagem**
+
+O acompanhamento depende de avaliações, simulados e análise manual dos resultados, o que pode dificultar a identificação de problemas recorrentes.
+
+**5. Ferramentas necessárias**
+
+O perfil simulado demonstra interesse em um painel contendo percentual de acertos, quantidade de questões respondidas, desempenho por assunto e evolução nos simulados.
+
+**6. Acesso às questões anteriores**
+
+As provas disponibilizadas em documentos podem dificultar a busca por questões específicas de determinado curso ou conteúdo.
+
+**7. Limitações dos simulados**
+
+Os resultados podem apresentar poucos detalhes, dificultando a identificação dos conteúdos que precisam ser revisados.
+
+**8. Explicação dos erros**
+
+Apenas apresentar a alternativa correta pode não ser suficiente para que o estudante compreenda o conteúdo.
+
+**9. Funcionalidades prioritárias**
+
+Banco de questões organizado, simulados por curso, relatórios de desempenho e possibilidade de professores comentarem questões.
+
+**10. Problema mais urgente**
+
+A dificuldade de acompanhar o desempenho e identificar antecipadamente as necessidades dos estudantes.
+
+**11. Avaliação da proposta**
+
+A simulação sugere priorizar banco de questões, simulados e relatórios, deixando funcionalidades complementares, como fórum e notificações, para etapas posteriores.
+
+#### Principais hipóteses de necessidades
+
+| ID | Dificuldade simulada | Necessidade identificada |
+|---|---|---|
+| H01 | Materiais de estudo descentralizados | Centralizar questões e conteúdos |
+| H02 | Dificuldade de localizar questões | Permitir pesquisas por curso, ano e componente |
+| H03 | Falta de acompanhamento do desempenho | Disponibilizar relatórios e estatísticas |
+| H04 | Simulados com pouco retorno pedagógico | Apresentar resultados detalhados |
+| H05 | Dificuldade em compreender os erros | Disponibilizar gabaritos comentados |
+| H06 | Dificuldade de identificar conteúdos problemáticos | Apresentar desempenho por área de conhecimento |
+
+#### Conclusão da simulação
+
+A atividade exploratória indica que a proposta do Sistema de Apoio ao ENADE pode atender a necessidades relevantes relacionadas à organização dos estudos, realização de simulados e acompanhamento de desempenho.
+
+As hipóteses levantadas estão alinhadas a funcionalidades já previstas no projeto. A próxima etapa de elicitação deverá validar essas necessidades com participantes reais e revisar os requisitos conforme as evidências coletadas.
+
 ### Principais dores e citações (anonimizadas)
 - 
 - 

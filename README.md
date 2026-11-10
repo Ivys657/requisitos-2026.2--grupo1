@@ -25,6 +25,8 @@ Entre as funcionalidades propostas estão:
 
 A primeira sprint contempla a elicitação de requisitos, a definição das funcionalidades e a modelagem UML inicial.
 
+**Elicitação exploratória:** foi documentada uma simulação de entrevista com o perfil de professor da área de TI, utilizada para levantar hipóteses de necessidades e relacioná-las aos requisitos do projeto. A validação com stakeholders reais permanece pendente.
+
 ### Documentação
 
 | Documento | Acesso |

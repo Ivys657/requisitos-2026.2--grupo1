@@ -85,3 +85,21 @@
 | Feedback de desempenho | RF16–RF18 | UC07, UC12 |
 | Aprendizado colaborativo | RF19–RF22 | UC08, UC13 |
 | Acesso seguro | RF01–RF04, RF23 | UC01, UC02, UC14 |
+## Rastreabilidade das necessidades exploratórias
+
+A simulação de entrevista com o perfil de professor da área de TI permitiu identificar hipóteses de necessidades que podem ser relacionadas aos requisitos já definidos.
+
+| Hipótese | Necessidade | Requisitos relacionados |
+|---|---|---|
+| H01 | Centralizar as questões de preparação | RF05 |
+| H02 | Facilitar a localização de questões | RF06 |
+| H03 | Acompanhar o desempenho dos estudantes | RF16, RF17, RF18 |
+| H04 | Oferecer simulados com resultados detalhados | RF12, RF13, RF15 |
+| H05 | Apresentar explicações sobre os erros | RF10, RF11 |
+| H06 | Identificar conteúdos com maior dificuldade | RF16, RF18 |
+
+**Origem das necessidades:** simulação exploratória de entrevista.
+
+**Estado de validação:** hipóteses pendentes de confirmação com stakeholders reais.
+
+Os requisitos relacionados já fazem parte da especificação inicial e poderão ser refinados conforme novos dados de elicitação forem coletados.
