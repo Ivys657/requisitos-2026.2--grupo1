@@ -1,0 +1,35 @@
+Crie um PROTÓTIPO NAVEGÁVEL E CLICÁVEL (não um sistema backend) do produto conceitual “Sistema de Apoio ao ENADE”. Interface WEB RESPONSIVA em PORTUGUÊS BRASILEIRO. Use APENAS DADOS FICTÍCIOS. Baseie o design nos casos de uso UC01–UC14 e nas regras de negócio RN01–RN18 informadas abaixo. Não introduza novas operações definitivas além dessas especificações.
+
+ESTILO: interface acadêmica, limpa, acessível, fundo claro, azul-marinho, azul suave para realces, alto contraste, feedback e estados vazios, menus e breadcrumbs coerentes. Desktop primeiro, versão mobile responsiva. Todo botão primário dos fluxos listados precisa navegar para outra tela/estado e oferecer “Voltar”. Sem marcas institucionais oficiais.
+
+PERFIS: Estudante, Professor, Coordenador e Administrador (apenas quatro perfis). Painéis próprios conforme perfil. O administrador também modera, sem quinto perfil.
+
+TELAS CONECTADAS:
+- Login (UC02): e-mail/senha, Entrar, Cadastrar, Esqueci senha; erros, conta desativada e estado de BLOQUEIO TEMPORÁRIO após 5 falhas consecutivas. NÃO inventar duração do bloqueio.
+- Cadastro (UC01): nome, e-mail, curso, senha; confirmação e erro de e-mail já existente.
+- Recuperar senha (UC09): solicitar e-mail, aviso genérico, tela demonstrativa de redefinição, voltar a login. Não enviar e-mails reais.
+- Painel estudante: acessos claros a Banco de Questões, Novo Simulado, Meu Desempenho e Fórum.
+- Banco de questões (UC03): filtros ANO, CURSO/ÁREA, COMPONENTE (formação geral/conhecimento específico), PALAVRA-CHAVE; lista de questões ATIVAS com fonte/edição e estado sem resultados. Não criar cadastro obrigatório de disciplina/conteúdo, pois isso ainda não foi aprovado.
+- Responder questão (UC04): alternativas de múltipla escolha, Responder, feedback de acerto/erro, FAVORITAR e MARCAR PARA REVISÃO como ação suplementar prevista em RF08.
+- Gabarito comentado (UC06): revelar alternativa correta e explicação APENAS depois de responder a questão individual ou depois de ENCERRAR o simulado.
+- Configurar simulado (UC05): componente e quantidade, com curso/área do estudante. Estado de acervo insuficiente.
+- Simulado ativo (UC05): questão atual, opções, número/progresso, cronômetro de demonstração, Anterior, Próxima, Finalizar, indicador de resposta salva. Gabarito NÃO visível nessa etapa.
+- Estado de queda de conexão (UC05): aviso de desconexão com opção de tentar retomar até 30 minutos após queda; não implemente cálculo real de contagem de tempo offline e não declare política definitiva de cronômetro durante a interrupção, pois é decisão pendente.
+- Resultado e revisão do simulado (UC05, UC06): nota em percentual, mesmo peso por questão, não respondidas contabilizadas como erradas, acertos divididos por formação geral e específica; revisão e link para Meu desempenho.
+- Meu desempenho (UC07): gráficos e histórico individuais, sem navegação a dados de outros estudantes e com estado de ausência de histórico.
+- Fórum por questão (UC08): listar tópicos, abrir tópico, responder, denunciar informando motivo, confirmação, sinal visual de notificação ao autor do tópico e estado de publicação automaticamente OCULTA após 3 denunciantes DIFERENTES; notificações apenas simuladas.
+- Área do Professor (UC11): encontrar questão e criar/editar comentário pedagógico, bloqueio de usuários não autorizados.
+- Painel do Coordenador (UC12): SOMENTE resultados AGREGADOS e ANONIMIZADOS do seu curso, sem nomes/matrículas/notas individuais. Exibir aviso de dados insuficientes e OCULTAR estatísticas se o grupo tiver menos de 5 estudantes; mostrar exemplo com 12 estudantes.
+- Administração de Questões (UC10): listagem, novo, editar, importar (simulada), desativar; ano/edição, curso/área, componente obrigatórios. Desativada não vai a novas buscas e históricos são preservados.
+- Administração de Usuários (UC14): ativar, desativar, mudar ÚNICO perfil principal; desativar não é apagar dados definitivamente.
+- Moderação (UC13): denúncias, contagem de denunciantes distintos, publicação ocultada automaticamente após 3 denúncias de contas diferentes, decisão Manter/Ocultar/Remover.
+
+FLUXOS OBRIGATORIAMENTE NAVEGÁVEIS:
+A) Login → Criar conta → Confirmar cadastro → Login → Painel estudante.
+B) Painel → Banco de questões → Filtrar → Abrir questão → Responder → Gabarito comentado → Voltar.
+C) Painel → Configurar simulado → Simulado ativo → Finalizar → Resultado → Revisão → Meu desempenho.
+D) Fórum → Abrir tópico → Responder → Notificação ilustrativa / Denunciar → Confirmação.
+E) Administração → Gerenciar questões → Editar → Salvar → Lista; Administração → Moderação → Decisão.
+F) Login (perfil Coordenador) → Desempenho agregado → Estado “menos de 5 estudantes”.
+
+Não mostrar um UC15 definitivo de indicadores administrativos sem aprovação do grupo. Se precisar de área inicial administrativa, use apenas atalhos para Gerenciar questões, Gerenciar usuários e Moderação (UC10/UC14/UC13). Todos os dados e as interações são DEMONSTRAÇÕES do protótipo. Entregar telas conectadas e visualizáveis em modo de reprodução/navegação.
