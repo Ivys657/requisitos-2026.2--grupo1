@@ -88,3 +88,25 @@ As atividades são organizadas por meio das Issues e Milestones do GitHub, permi
 
 - Projeto de referência Feira Livre:
   https://github.com/marcelobezerra-dotcom/requisitos-projeto-feira-livre-2026-01
+
+
+## Sprint 2 — Especificação e Prototipagem
+
+Nesta etapa, o Sistema de Apoio ao ENADE foi desenvolvido em nível de especificação e prototipagem, com base nos requisitos e nos 14 casos de uso definidos no projeto.
+
+### Protótipo navegável
+
+**Ferramenta:** Google Stitch
+
+**Link:** https://stitch.google.com/preview/14068087734489227764
+
+O protótipo acadêmico demonstra as interfaces de autenticação, banco de questões, simulados cronometrados, gabaritos comentados, estatísticas, fórum e funcionalidades administrativas.
+
+As telas utilizam dados fictícios e representam comportamentos previstos nos requisitos. Não se trata de um sistema implementado ou oficialmente vinculado à UNIFOR, ao MEC ou ao INEP.
+
+### Documentação
+
+- `docs/08-srs-sprint2.md` — Documento de Especificação de Requisitos de Software (SRS).
+- `docs/09-revisao-consistencia.md` — Revisão de consistência entre requisitos e UML.
+- `docs/casos-de-uso/` — Especificações dos casos de uso.
+- `docs/prototipos/` — Materiais de apoio à prototipagem.

@@ -1,0 +1,27 @@
+Crie um protótipo NAVEGÁVEL (clicável) de uma PLATAFORMA WEB EDUCACIONAL RESPONSIVA chamada “Sistema de Apoio ao ENADE”. O objetivo é ajudar estudantes a encontrar questões de exames anteriores do ENADE, responder questões, consultar gabaritos comentados, realizar simulados cronometrados e acompanhar a evolução do desempenho. Não implemente backend real, autenticação real ou dados reais de estudantes: use apenas dados fictícios de demonstração.
+
+Design: profissional, acadêmico e claro, em português brasileiro; fundo branco, azul-marinho como cor primária, azul claro para destaques, bom contraste; navegação lateral em desktop e compacta em mobile; formulários com rótulos explícitos; gráficos simples; estados vazios e feedback de erros; acessibilidade e consistência entre telas.
+
+Telas que devem existir e ficar ligadas por navegação:
+1. LOGIN (e-mail, senha, Entrar, Esqueci minha senha, Criar conta).
+2. CADASTRO DE ESTUDANTE (nome, e-mail, curso, senha, botão Cadastrar).
+3. PAINEL DO ESTUDANTE (atalhos Banco de Questões, Novo Simulado, Meu Desempenho, Fórum; métricas fictícias).
+4. BANCO DE QUESTÕES (filtros ano, curso/área, componente, palavra-chave; lista e estado sem resultados).
+5. QUESTÃO (enunciado, alternativas, Responder, feedback de acerto/erro, opção Favoritar como proposta a validar).
+6. GABARITO COMENTADO (resposta correta e justificativa, botão Próxima questão).
+7. CONFIGURAR SIMULADO (curso, componente, número de questões, Iniciar).
+8. SIMULADO EM ANDAMENTO (questão atual, alternativas, progresso, cronômetro, Anterior/Próxima, Finalizar, simulação de conexão interrompida).
+9. RESULTADO DO SIMULADO (nota ilustrativa, acertos por área, Revisar questões, Meu desempenho).
+10. MEU DESEMPENHO (gráficos por área e evolução por período, sem dados reais).
+11. FÓRUM POR QUESTÃO (tópicos, respostas, Criar tópico, Denunciar conteúdo).
+12. ÁREA DO PROFESSOR (consultar questão e cadastrar comentário pedagógico).
+13. PAINEL DO COORDENADOR (indicadores AGREGADOS e ANONIMIZADOS por curso; nenhum nome/nota individual).
+14. ÁREA ADMINISTRATIVA (listar usuários, ativar/desativar/alterar perfil; gerenciar questões com cadastro, edição, desativação e importação simulada; fila de denúncias/moderação).
+
+Vincule os principais botões entre telas, especialmente estes fluxos completos:
+A) Login → Painel → Banco de questões → Questão → Responder → Gabarito comentado → Painel.
+B) Painel → Novo simulado → Simulado em andamento → Resultado → Meu desempenho.
+C) Login → Cadastro → confirmação → Login.
+D) Área administrativa → Gerenciar questões → Editar questão → Salvar → listagem.
+
+As interações são de DEMONSTRAÇÃO. Use nomes genéricos e dados fictícios. Nunca apresente os protótipos como um sistema já implementado. Inclua exemplos de feedback, validações e erros, e permita voltar às telas anteriores. A hierarquia curso/disciplina/conteúdo/material/questão está em validação: não crie procedimentos adicionais como definitivos sem aprovação.
